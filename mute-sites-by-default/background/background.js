@@ -5,12 +5,9 @@ init();
 function init() {
 	// create empty whitelist if it does not exist
 	getWhitelist().then(whitelist => {
-		return new Promise(resolve => {
-			if (!whitelist) {
-				return setWhitelist([]);
-			}
-			resolve();
-		});
+		if (!whitelist) {
+			return setWhitelist([]);
+		}
 	}).then(() => {
 		updateMuted();
 		browser.tabs.onCreated.addListener(onTabCreated);
