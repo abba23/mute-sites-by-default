@@ -3,15 +3,18 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="options.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bootstrap.min.css">
 	</head>
 	<body>
-		<h1>Whitelist</h1>
-		<div>
-			<input type="text" id="add-input">
-			<button id="add-button">Add</button>
+		<div class="container">
+			<h1>Whitelist</h1>
+			<div class="input-group" style="width: 40%;">
+				<input type="text" id="add-input" class="form-control" placeholder="Website (e.g. www.youtube.com)">
+				<button id="add-button" class="btn btn-primary" style="margin-left: 10px;">Add</button>
+			</div>
 		</div>
-		<div>
+		<div class="container mt-5">
 			<table id="table">
 				<thead>
 					<tr>

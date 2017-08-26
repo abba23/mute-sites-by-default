@@ -17,7 +17,7 @@ function init() {
 			onAdd();
 		}
 	});
-
+	
 	browser.storage.onChanged.addListener(onStorageChanged);
 }
 
@@ -25,7 +25,7 @@ function updateTable() {
 	// create new table from current whitelist
 	var table = document.getElementById("table");
 	var rows = document.createElement("tbody");
-	
+
 	// create row for every site on whitelist
 	return getWhitelist().then(whitelist => {
 		whitelist.sort();
@@ -35,12 +35,14 @@ function updateTable() {
 			var siteText = document.createElement("input");
 			siteText.value = site;
 			siteText.type = "text";
+			siteText.className = "form-control";
 			siteText.readOnly = "readonly";
 			row.insertCell(0).appendChild(siteText);
 
 			var removeButton = document.createElement("input");
-			removeButton.value = "X";
 			removeButton.type = "button";
+			removeButton.className = "btn btn-danger";
+			removeButton.value = "X";
 			removeButton.onclick = () => {onRemove(site);};
 
 			var removeCell = row.insertCell(1);
