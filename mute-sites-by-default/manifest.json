@@ -1,18 +1,19 @@
 {
 	"manifest_version": 2,
-	"name": "Mute sites by default",
-	"version": "1.6",
+	"name": "__MSG_name__",
+	"version": "1.7",
 	"applications": {
 		"gecko": {
 			"id": "@mute-sites-by-default"
 		}
 	},
-	"description": "Mutes all sites by default and remembers unmuted sites",
+	"description": "__MSG_description__",
 	"homepage_url": "https://github.com/abba23/mute-sites-by-default",
 	"icons": {
 		"48": "icons/icon-48.png",
 		"96": "icons/icon-96.png"
 	},
+	"default_locale": "en",
 	"permissions": [
 		"storage",
 		"tabs"

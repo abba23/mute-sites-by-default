@@ -1,0 +1,36 @@
+{
+  "name": {
+    "message": "Webseiten standardmäßig stummschalten",
+    "description": "name of the extension"
+  },
+  "description": {
+    "message": "Schaltet alle Webseiten standardmäßig auf stumm und merkt sich welche auf laut geschaltet wurden",
+    "description": "description of the extension"
+  },
+  "whitelistHeading": {
+    "message": "Whitelist",
+    "description": "heading of the whitelist section"
+  },
+  "whitelistAddInput": {
+    "message": "Webseite (z.B. $EXAMPLE$)",
+    "description": "placeholder of the whitelist add input",
+    "placeholders": {
+        "example": {
+          "content": "$1",
+          "example": "www.youtube.com"
+        }
+    }
+  },
+  "whitelistAddButton": {
+    "message": "Hinzufügen",
+    "description": "text of the whitelist add button"
+  },
+  "whitelistTableWebsiteHeader": {
+    "message": "Webseite",
+    "description": "header of the whitelist table's 'Website' column"
+  },
+  "whitelistTableRemoveHeader": {
+    "message": "Entfernen",
+    "description": "header of the whitelist table's 'Remove' column"
+  }
+}

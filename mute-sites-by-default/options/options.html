@@ -8,18 +8,18 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Whitelist</h1>
-			<div class="input-group" style="width: 40%;">
-				<input type="text" id="add-input" class="form-control" placeholder="Website (e.g. www.youtube.com)">
-				<button id="add-button" class="btn btn-primary" style="margin-left: 10px;">Add</button>
+			<h1 id="whitelist-heading"></h1>
+			<div class="input-group" style="width: 50%;">
+				<input id="whitelist-add-input" class="form-control" type="text">
+				<button id="whitelist-add-button" class="btn btn-primary" style="margin-left: 10px;"></button>
 			</div>
 		</div>
 		<div class="container mt-5">
-			<table id="table">
+			<table id="whitelist-table">
 				<thead>
 					<tr>
-						<th><b>Website</b></th>
-						<th><b>Remove</b></th>
+						<th id="whitelist-table-website-header"></th>
+						<th id="whitelist-table-remove-header"></th>
 					</tr>
 				</thead>
 				<tbody></tbody>

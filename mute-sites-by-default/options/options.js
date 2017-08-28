@@ -3,27 +3,36 @@
 init();
 
 function init() {
+	var heading = document.getElementById("whitelist-heading");
+	var addInput = document.getElementById("whitelist-add-input");
+	var addButton = document.getElementById("whitelist-add-button");
+	var websiteHeader = document.getElementById("whitelist-table-website-header");
+	var removeHeader = document.getElementById("whitelist-table-remove-header");
+
+	// set localized strings
+	heading.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistHeading")));
+	addInput.placeholder = browser.i18n.getMessage("whitelistAddInput", "www.youtube.com");
+	addButton.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistAddButton")));
+	websiteHeader.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistTableWebsiteHeader")));
+	removeHeader.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistTableRemoveHeader")));
+
 	// initialize whitelist table
 	updateTable();
 
-	// add whitelist entry on add button click
-	var addButton = document.getElementById("add-button");
+	// add whitelist entry on add button click or enter key press
 	addButton.addEventListener("click", () => {onAdd();});
-
-	// add whitelist entry on enter key press
-	var addInput = document.getElementById("add-input");
 	addInput.addEventListener("keypress", (event) => {
 		if (event.which == 13) {
 			onAdd();
 		}
 	});
-	
+
 	browser.storage.onChanged.addListener(onStorageChanged);
 }
 
 function updateTable() {
 	// create new table from current whitelist
-	var table = document.getElementById("table");
+	var table = document.getElementById("whitelist-table");
 	var rows = document.createElement("tbody");
 
 	// create row for every site on whitelist
@@ -57,7 +66,7 @@ function updateTable() {
 }
 
 function onAdd() {
-	var input = document.getElementById("add-input");
+	var input = document.getElementById("whitelist-add-input");
 	var site = input.value;
 	input.value = "";
 

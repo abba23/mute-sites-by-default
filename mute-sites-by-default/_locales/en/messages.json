@@ -1,0 +1,36 @@
+{
+  "name": {
+    "message": "Mute sites by default",
+    "description": "name of the extension"
+  },
+  "description": {
+    "message": "Mutes all sites by default and remembers unmuted sites",
+    "description": "description of the extension"
+  },
+  "whitelistHeading": {
+    "message": "Whitelist",
+    "description": "heading of the whitelist section"
+  },
+  "whitelistAddInput": {
+    "message": "Website (e.g. $EXAMPLE$)",
+    "description": "placeholder of the whitelist add input",
+    "placeholders": {
+        "example": {
+          "content": "$1",
+          "example": "www.youtube.com"
+        }
+    }
+  },
+  "whitelistAddButton": {
+    "message": "Add",
+    "description": "text of the whitelist add button"
+  },
+  "whitelistTableWebsiteHeader": {
+    "message": "Website",
+    "description": "header of the whitelist table's 'Website' column"
+  },
+  "whitelistTableRemoveHeader": {
+    "message": "Remove",
+    "description": "header of the whitelist table's 'Remove' column"
+  }
+}
