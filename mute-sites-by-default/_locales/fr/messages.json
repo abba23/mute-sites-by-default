@@ -1,18 +1,18 @@
 {
   "name": {
-    "message": "Webseiten standardmäßig stummschalten",
+    "message": "Coupe le son des sites web par défaut",
     "description": "name of the extension"
   },
   "description": {
-    "message": "Schaltet alle Webseiten standardmäßig stumm und merkt sich für welche Webseiten die Stummschaltung aufgehoben wurde",
+    "message": "Coupe le son de tous les sites web par défaut et se souvient des sites non assourdis",
     "description": "description of the extension"
   },
   "whitelistHeading": {
-    "message": "Positivliste",
+    "message": "Liste blanche",
     "description": "heading of the whitelist section"
   },
   "whitelistAddInput": {
-    "message": "Webseite (z.B. $EXAMPLE$)",
+    "message": "Site web (par ex. $EXAMPLE$)",
     "description": "placeholder of the whitelist add input",
     "placeholders": {
         "example": {
@@ -22,15 +22,15 @@
     }
   },
   "whitelistAddButton": {
-    "message": "Hinzufügen",
+    "message": "Ajouter",
     "description": "text of the whitelist add button"
   },
   "whitelistTableWebsiteHeader": {
-    "message": "Webseite",
+    "message": "Site web",
     "description": "header of the whitelist table's 'Website' column"
   },
   "whitelistTableRemoveHeader": {
-    "message": "Entfernen",
+    "message": "Supprimer",
     "description": "header of the whitelist table's 'Remove' column"
   }
 }
