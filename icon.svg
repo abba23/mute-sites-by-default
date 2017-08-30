@@ -16,9 +16,9 @@
    id="SVGRoot"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="/home/user/Sync/Projects/mute-sites-by-default/icon-96.png"
-   inkscape:export-xdpi="95.612991"
-   inkscape:export-ydpi="95.612991">
+   inkscape:export-filename="/home/user/Sync/Projects/mute-sites-by-default/icon-48_new.png"
+   inkscape:export-xdpi="48"
+   inkscape:export-ydpi="48">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -27,15 +27,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.5424723"
-     inkscape:cx="35.443067"
-     inkscape:cy="47.250717"
+     inkscape:cx="20.129786"
+     inkscape:cy="54.251368"
      inkscape:document-units="px"
      inkscape:current-layer="layer3"
      showgrid="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1055"
+     inkscape:window-height="1080"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:grid-bbox="true"
      inkscape:snap-object-midpoints="true"
@@ -65,15 +65,18 @@
      id="layer3"
      inkscape:label="background"
      style="display:inline">
-    <rect
-       style="fill:#464646;fill-opacity:1;stroke:none;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect835"
-       width="96.520081"
-       height="96.387489"
-       x="-0.13258246"
-       y="0.14283645"
-       inkscape:export-xdpi="95.614067"
-       inkscape:export-ydpi="95.614067" />
+    <path
+       style="opacity:0.98000004;fill:#464646;fill-opacity:1;stroke:none;stroke-width:4.05569363;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path968"
+       sodipodi:type="arc"
+       sodipodi:cx="48.102028"
+       sodipodi:cy="48.125916"
+       sodipodi:rx="42.409496"
+       sodipodi:ry="42.409687"
+       sodipodi:start="3.3411711"
+       sodipodi:end="3.3364742"
+       d="M 6.5343499,39.717934 A 42.409496,42.409687 0 0 1 56.461156,6.5482064 42.409496,42.409687 0 0 1 89.689337,56.436254 42.409496,42.409687 0 0 1 39.840565,89.723141 42.409496,42.409687 0 0 1 6.4953173,39.913266"
+       sodipodi:open="true" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -82,18 +85,18 @@
      style="display:inline">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.63310432px;line-height:1.25;font-family:roboto;-inkscape-font-specification:roboto;letter-spacing:0px;word-spacing:0px;fill:#ffb940;fill-opacity:1;stroke:none;stroke-width:1.9974829;stroke-opacity:1;"
-       x="16.528852"
-       y="71.481148"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.63310432px;line-height:1.25;font-family:roboto;-inkscape-font-specification:roboto;letter-spacing:0px;word-spacing:0px;fill:#ffb940;fill-opacity:1;stroke:none;stroke-width:1.9974829;stroke-opacity:1"
+       x="16.660189"
+       y="71.882675"
        id="text847"
-       transform="scale(1.0094879,0.99060126)"
+       transform="scale(1.0094879,0.99060127)"
        inkscape:export-xdpi="95.614067"
        inkscape:export-ydpi="95.614067"><tspan
          sodipodi:role="line"
          id="tspan845"
-         x="16.528852"
-         y="71.481148"
-         style="fill:#ffb940;stroke:none;stroke-width:1.9974829;stroke-opacity:1;fill-opacity:1;">www</tspan></text>
+         x="16.660189"
+         y="71.882675"
+         style="fill:#ffb940;fill-opacity:1;stroke:none;stroke-width:1.9974829;stroke-opacity:1">www</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.33333349px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -106,7 +109,7 @@
          y="53.651955" /></text>
     <g
        id="g877"
-       transform="matrix(1.8044799,0,0,1.9523292,-37.694704,-35.356868)"
+       transform="matrix(1.8044799,0,0,1.9523292,-37.164373,-35.356868)"
        style="stroke:#719b32;stroke-opacity:1"
        inkscape:export-xdpi="95.614067"
        inkscape:export-ydpi="95.614067">
