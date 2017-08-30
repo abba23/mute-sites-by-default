@@ -45,7 +45,9 @@ function onTabUpdated(tabId, changeInfo, tab) {
 
 function onStorageChanged(changes, area) {
 	// update muted states when whitelist changes
-	if ("whitelist" in changes) {
-		updateAllTabs();
-	}
+	getOptions().then(options => {
+		if ("whitelist" in changes && options.changeWhitelist) {
+			updateAllTabs();
+		}
+	});
 }
