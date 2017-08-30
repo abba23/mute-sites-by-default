@@ -17,7 +17,7 @@ function init() {
 			return setWhitelist([]);
 		}
 	}).then(() => {
-		updateMuted();
+		updateAllTabs();
 		browser.tabs.onCreated.addListener(onTabCreated);
 		browser.tabs.onUpdated.addListener(onTabUpdated);
 		browser.storage.onChanged.addListener(onStorageChanged);
@@ -26,13 +26,13 @@ function init() {
 
 function onTabCreated(tab) {
 	// set muted state for new tabs
-	updateMuted();
+	updateTab(tab);
 }
 
 function onTabUpdated(tabId, changeInfo, tab) {
 	// update muted state when url changes
 	if (changeInfo.url) {
-		updateMuted();
+		updateTab(tab);
 	}
 
 	// update whitelist when user changes muted state
@@ -46,6 +46,6 @@ function onTabUpdated(tabId, changeInfo, tab) {
 function onStorageChanged(changes, area) {
 	// update muted states when whitelist changes
 	if ("whitelist" in changes) {
-		updateMuted();
+		updateAllTabs();
 	}
 }

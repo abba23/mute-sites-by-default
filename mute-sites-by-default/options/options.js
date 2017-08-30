@@ -23,7 +23,6 @@ function init() {
 
 	// initialize options
 	getOptions().then((options) => {
-		console.log("init checkbox: " + options.changeWhitelist);
 		optionsChangeWhitelistCheckbox.checked = options.changeWhitelist;
 	});
 	optionsChangeWhitelistCheckbox.addEventListener("change", () => {onOptionsChanged();});
@@ -76,10 +75,6 @@ function updateWhitelistTable() {
 
 function onOptionsChanged() {
 	var optionsChangeWhitelistCheckbox = document.getElementById("options-change-whitelist-checkbox");
-
-	// DEBUG
-	console.log("checkbox: " + optionsChangeWhitelistCheckbox.checked);
-
 	var options = {
 		"changeWhitelist": optionsChangeWhitelistCheckbox.checked
 	};

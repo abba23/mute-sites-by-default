@@ -18,7 +18,14 @@ function modifyWhitelist(site, muted) {
 	});
 }
 
-function updateMuted() {
+function updateTab(tab) {
+	return getWhitelist().then(whitelist => {
+		var whitelisted = isWhitelisted(whitelist, urlToHostname(tab.url));
+		return modifyTab(tab.id, !whitelisted);
+	});
+}
+
+function updateAllTabs() {
 	return Promise.all([getWhitelist(), getTabs()]).then(result => {
 		var whitelist = result[0];
 		var tabs = result[1];
