@@ -34,6 +34,16 @@ function updateMuted() {
 	});
 }
 
+function getOptions() {
+	return browser.storage.local.get("options").then(optionsObject => {
+		return optionsObject.options;
+	});
+}
+
+function setOptions(options) {
+	return browser.storage.local.set({"options": options});
+}
+
 function getWhitelist() {
 	return browser.storage.local.get("whitelist").then(whitelistObject => {
 		return whitelistObject.whitelist;

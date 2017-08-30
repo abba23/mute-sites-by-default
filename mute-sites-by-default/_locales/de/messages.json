@@ -7,6 +7,14 @@
     "message": "Schaltet alle Webseiten standardmäßig stumm und merkt sich für welche Webseiten die Stummschaltung aufgehoben wurde",
     "description": "description of the extension"
   },
+  "optionsHeading": {
+    "message": "Optionen",
+    "description": "heading of the 'Options' section"
+  },
+  "optionsChangeWhitelistLabel": {
+    "message": "Positivliste anpassen, wenn eine Webseite stumm geschaltet oder eine Stummschaltung aufgehoben wird",
+    "description": "label of the change whitelist option checkbox"
+  },
   "whitelistHeading": {
     "message": "Positivliste",
     "description": "heading of the whitelist section"

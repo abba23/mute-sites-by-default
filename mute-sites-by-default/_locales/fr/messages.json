@@ -4,8 +4,16 @@
     "description": "name of the extension"
   },
   "description": {
-    "message": "Coupe le son de tous les sites web par défaut et se souvient des sites non assourdis",
+    "message": "Coupe le son de tous les sites web par défaut et se souvient des sites non coupé",
     "description": "description of the extension"
+  },
+  "optionsHeading": {
+    "message": "Options",
+    "description": "heading of the 'Options' section"
+  },
+  "optionsChangeWhitelistLabel": {
+    "message": "Modifier la liste blanche en conséquence lors de l'activation/la désactivation de la coupure du son de site web",
+    "description": "label of the change whitelist option checkbox"
   },
   "whitelistHeading": {
     "message": "Liste blanche",

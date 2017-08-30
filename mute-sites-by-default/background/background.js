@@ -3,7 +3,15 @@
 init();
 
 function init() {
-	// create empty whitelist if it does not exist
+	// initialize storage on first run
+	getOptions().then(options => {
+		if (!options) {
+			var options = {
+				"changeWhitelist": true
+			};
+			return setOptions(options);
+		}
+	});
 	getWhitelist().then(whitelist => {
 		if (!whitelist) {
 			return setWhitelist([]);
@@ -28,9 +36,11 @@ function onTabUpdated(tabId, changeInfo, tab) {
 	}
 
 	// update whitelist when user changes muted state
-	if (changeInfo.mutedInfo && changeInfo.mutedInfo.reason == "user") {
-		modifyWhitelist(urlToHostname(tab.url), changeInfo.mutedInfo.muted);		
-	}
+	getOptions().then(options => {
+		if (changeInfo.mutedInfo && changeInfo.mutedInfo.reason == "user" && options.changeWhitelist) {
+			modifyWhitelist(urlToHostname(tab.url), changeInfo.mutedInfo.muted);
+		}
+	});
 }
 
 function onStorageChanged(changes, area) {

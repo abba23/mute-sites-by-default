@@ -3,34 +3,43 @@
 init();
 
 function init() {
-	var heading = document.getElementById("whitelist-heading");
-	var addInput = document.getElementById("whitelist-add-input");
-	var addButton = document.getElementById("whitelist-add-button");
-	var websiteHeader = document.getElementById("whitelist-table-website-header");
-	var removeHeader = document.getElementById("whitelist-table-remove-header");
+	var optionsHeading = document.getElementById("options-heading");
+	var optionsChangeWhitelistCheckbox = document.getElementById("options-change-whitelist-checkbox");
+	var optionsChangeWhitelistLabel = document.getElementById("options-change-whitelist-label");
+	var whitelistHeading = document.getElementById("whitelist-heading");
+	var whitelistAddInput = document.getElementById("whitelist-add-input");
+	var whitelistAddButton = document.getElementById("whitelist-add-button");
+	var whitelistTableWebsiteHeader = document.getElementById("whitelist-table-website-header");
+	var whitelistTableRemoveHeader = document.getElementById("whitelist-table-remove-header");
 
 	// set localized strings
-	heading.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistHeading")));
-	addInput.placeholder = browser.i18n.getMessage("whitelistAddInput", "www.youtube.com");
-	addButton.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistAddButton")));
-	websiteHeader.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistTableWebsiteHeader")));
-	removeHeader.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistTableRemoveHeader")));
+	optionsHeading.appendChild(document.createTextNode(browser.i18n.getMessage("optionsHeading")));
+	optionsChangeWhitelistLabel.appendChild(document.createTextNode(browser.i18n.getMessage("optionsChangeWhitelistLabel")));
+	whitelistHeading.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistHeading")));
+	whitelistAddInput.placeholder = browser.i18n.getMessage("whitelistAddInput", "www.youtube.com");
+	whitelistAddButton.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistAddButton")));
+	whitelistTableWebsiteHeader.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistTableWebsiteHeader")));
+	whitelistTableRemoveHeader.appendChild(document.createTextNode(browser.i18n.getMessage("whitelistTableRemoveHeader")));
 
-	// initialize whitelist table
-	updateTable();
+	// initialize options
+	getOptions().then((options) => {
+		console.log("init checkbox: " + options.changeWhitelist);
+		optionsChangeWhitelistCheckbox.checked = options.changeWhitelist;
+	});
+	optionsChangeWhitelistCheckbox.addEventListener("change", () => {onOptionsChanged();});
 
-	// add whitelist entry on add button click or enter key press
-	addButton.addEventListener("click", () => {onAdd();});
-	addInput.addEventListener("keypress", (event) => {
+	// initialize whitelist
+	updateWhitelistTable();
+	whitelistAddButton.addEventListener("click", () => {onWhitelistAdd();});
+	whitelistAddInput.addEventListener("keypress", (event) => {
 		if (event.which == 13) {
-			onAdd();
+			onWhitelistAdd();
 		}
 	});
-
 	browser.storage.onChanged.addListener(onStorageChanged);
 }
 
-function updateTable() {
+function updateWhitelistTable() {
 	// create new table from current whitelist
 	var table = document.getElementById("whitelist-table");
 	var rows = document.createElement("tbody");
@@ -52,7 +61,7 @@ function updateTable() {
 			removeButton.type = "button";
 			removeButton.className = "btn btn-danger";
 			removeButton.value = "X";
-			removeButton.onclick = () => {onRemove(site);};
+			removeButton.onclick = () => {onWhitelistRemove(site);};
 
 			var removeCell = row.insertCell(1);
 			removeCell.style.textAlign = "center";
@@ -65,25 +74,37 @@ function updateTable() {
 	});
 }
 
-function onAdd() {
+function onOptionsChanged() {
+	var optionsChangeWhitelistCheckbox = document.getElementById("options-change-whitelist-checkbox");
+
+	// DEBUG
+	console.log("checkbox: " + optionsChangeWhitelistCheckbox.checked);
+
+	var options = {
+		"changeWhitelist": optionsChangeWhitelistCheckbox.checked
+	};
+	return setOptions(options);
+}
+
+function onWhitelistAdd() {
 	var input = document.getElementById("whitelist-add-input");
 	var site = input.value;
 	input.value = "";
 
-	modifyWhitelist(site, false).then(() => {
-		updateTable();
+	return modifyWhitelist(site, false).then(() => {
+		return updateWhitelistTable();
 	});
 }
 
-function onRemove(site) {
-	modifyWhitelist(site, true).then(() => {
-		updateTable();
+function onWhitelistRemove(site) {
+	return modifyWhitelist(site, true).then(() => {
+		return updateWhitelistTable();
 	});
 }
 
 function onStorageChanged(changes, area) {
 	// update table when whitelist changes
 	if ("whitelist" in changes) {
-		updateTable();
+		return updateWhitelistTable();
 	}
 }

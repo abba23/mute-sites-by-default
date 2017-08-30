@@ -7,9 +7,17 @@
     "message": "Mutes all sites by default and remembers unmuted sites",
     "description": "description of the extension"
   },
+  "optionsHeading": {
+    "message": "Options",
+    "description": "heading of the 'Options' section"
+  },
+  "optionsChangeWhitelistLabel": {
+    "message": "Change whitelist accordingly when muting/unmuting a website",
+    "description": "label of the change whitelist option checkbox"
+  },
   "whitelistHeading": {
     "message": "Whitelist",
-    "description": "heading of the whitelist section"
+    "description": "heading of the 'Whitelist' section"
   },
   "whitelistAddInput": {
     "message": "Website (e.g. $EXAMPLE$)",
