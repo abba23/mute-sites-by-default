@@ -62,7 +62,18 @@ function setWhitelist(whitelist) {
 }
 
 function isWhitelisted(whitelist, url) {
-	return whitelist.indexOf(url) > -1;
+	for (let whitelistedUrl of whitelist) {
+		// escape ignored regular expression symbols
+		whitelistedUrl = whitelistedUrl.replace(/[\-\[\]\/\{\}\(\)\+\?\.\\\^\$\|]/g, "\\$&");
+
+		// replace wildcard character "*" with regular expression
+		whitelistedUrl = whitelistedUrl.split("*").join(".*")
+
+		if (new RegExp("^" + whitelistedUrl + "$").test(url)) {
+			return true;
+		}
+	}
+	return false;
 }
 
 function getTabs() {
